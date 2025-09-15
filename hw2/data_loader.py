@@ -1,9 +1,11 @@
 import pandas as pd
 from google.colab import drive
 import os
+from sklearn.impute import SimpleImputer
 
 class Data_Loader:
 
+  @staticmethod
   def data_loading(file_link, category, numeric_features, categorical_features):
     try:
       drive.mount('/content/drive')
