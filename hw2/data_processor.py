@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
 class Data_Processor:
-
+  @staticmethod
   def data_processing(dataset, category, numeric_features, categorical_features):
     X = dataset.drop(columns=[category])
     y = dataset[category]
