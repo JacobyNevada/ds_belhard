@@ -1,16 +1,17 @@
 import pandas as pd
-
+import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 class Data_Visualiser:
+  @staticmethod
   def visualise_pairplot(dataset, category):
     sample_data = dataset.head(50)
     # Построение парных графиков при помощи sns
     sns.pairplot(sample_data, hue=category)
     plt.show()
 
-
+  @staticmethod
   def visualise_histogram(dataset):
     # Установка стиля Seaborn для красивых графиков
     sns.set(style="whitegrid")
@@ -30,7 +31,7 @@ class Data_Visualiser:
     # Показать график
     plt.show()
 
-
+  @staticmethod
   def visualise_heatmap(dataset):
     sns.set(style="white")
 
@@ -55,6 +56,7 @@ class Data_Visualiser:
     # Показать график
     plt.show()
 
+  @staticmethod
   def visualise_boxplot(dataset):
     sns.set(style="whitegrid")
 
@@ -69,6 +71,7 @@ class Data_Visualiser:
     plt.tight_layout()
     plt.show()
 
+  @staticmethod
   def visualise_lineplot(dataset, numeric_features):
     sns.set(style="whitegrid")
 
@@ -96,10 +99,10 @@ class Data_Visualiser:
     # Показать график
     plt.show()
 
-
+  @staticmethod
   def visualise_all_types(dataset, numeric_features, category):
-    visualise_pairplot(dataset, category)
-    visualise_histogram(dataset)
-    visualise_heatmap(dataset)
-    visualise_boxplot(dataset)
-    visualise_lineplot(dataset, numeric_features)
+    Data_Visualiser.visualise_pairplot(dataset, category)
+    Data_Visualiser.visualise_histogram(dataset)
+    Data_Visualiser.visualise_heatmap(dataset)
+    Data_Visualiser.visualise_boxplot(dataset)
+    Data_Visualiser.visualise_lineplot(dataset, numeric_features)
